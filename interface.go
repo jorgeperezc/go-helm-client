@@ -14,6 +14,7 @@ import (
 // NOTE: This is an interface to allow for mocking in tests.
 type Client interface {
 	AddOrUpdateChartRepo(entry repo.Entry) error
+	Login(entry *repo.Entry) error
 	UpdateChartRepos() error
 	InstallOrUpgradeChart(ctx context.Context, spec *ChartSpec) (*release.Release, error)
 	InstallChart(ctx context.Context, spec *ChartSpec) (*release.Release, error)
